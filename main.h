@@ -40,4 +40,6 @@ int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
 int print_reverse(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
+int print_pointer(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
 #endif /* MAIN_H */
