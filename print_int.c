@@ -1,5 +1,6 @@
 #include "main.h"
 
+/************************* PRINT INT *************************/
 /**
  * print_int - Print int
  * @types: Lista of arguments
@@ -10,7 +11,6 @@
  * @size: Size specifier
  * Return: Number of chars printed
  */
-
 int print_int(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -40,6 +40,6 @@ int print_int(va_list types, char buffer[],
 	}
 
 	i++;
-	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 
+	return (write_number(is_negative, i, buffer, flags, width, precision, size));
 }

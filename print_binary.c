@@ -1,5 +1,6 @@
 #include "main.h"
 
+/************************* PRINT BINARY *************************/
 /**
  * print_binary - Prints an unsigned number
  * @types: Lista of arguments
