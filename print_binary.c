@@ -40,6 +40,7 @@ int print_binary(va_list types, char buffer[],
 			char z = '0' + a[i];
 
 			write(1, &z, 1);
+			count++;
 		}
 	}
 
