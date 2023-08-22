@@ -1,5 +1,6 @@
 #include "main.h"
 
+/************************* PRINT A STRING *************************/
 /**
  * print_string - Prints a string
  * @types: List a of arguments
@@ -21,7 +22,6 @@ int print_string(va_list types, char buffer[],
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
-
 	if (str == NULL)
 	{
 		str = "(null)";
@@ -52,6 +52,6 @@ int print_string(va_list types, char buffer[],
 			return (width);
 		}
 	}
-	return (write(1, str, length));
 
+	return (write(1, str, length));
 }
