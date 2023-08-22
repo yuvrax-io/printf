@@ -18,13 +18,14 @@ int print_hexa(va_list types, char map_to[],
 char buffer[], int flags, char flag_ch, int width, int precision, int size);
 int print_hexa_upper(va_list types, char buffer[],
 	int flags, int width, int precision, int size);
-
+int print_int(va_list types, char buffer[],
+	int flags, int width, int precision, int size);
 
 int write_unsgnd(int is_negative, int ind,
 char buffer[],
 	int flags, int width, int precision, int size);
 
 long int convert_size_unsgnd(unsigned long int num, int size);
-
+long int convert_size_number(long int num, int size);
 
 #endif /* MAIN_H */
