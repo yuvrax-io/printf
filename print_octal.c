@@ -21,17 +21,19 @@ int print_octal(va_list types, char buffer[],
 	UNUSED(width);
 
 	num = convert_size_unsgnd(num, size);
-
-	if (num == 0)
+ 
+	if(num == 0)
 		buffer[i--] = '0';
 
 	buffer[BUFF_SIZE - 1] = '\0';
 
-	while (num > 0)
-	{
+	while (num > 0){
 		buffer[i--] = (num % 8) + '0';
 		num /= 8;
 	}
+
+	if (flags & F_HASH && init_num != 0)
+		buffer[i--] = '0';
 
 	i++;
 
