@@ -1,5 +1,6 @@
 #include "main.h"
 
+/****************** PRINT POINTER ******************/
 /**
  * print_pointer - Prints the value of a pointer variable
  * @types: List a of arguments
@@ -15,8 +16,9 @@ int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
-	int ind = BUFF_SIZE - 1, length = 2, padd_start = 1; /* length=2, for '0x' */
-	char map_to[] = "0123456789abcdf";
+	int ind = BUFF_SIZE - 2, length = 2, padd_start = 1; /* length=2, for '0x' */
+	unsigned long num_addrs;
+	char map_to[] = "0123456789abcdef";
 	void *addrs = va_arg(types, void *);
 
 	UNUSED(width);
@@ -40,14 +42,19 @@ int print_pointer(va_list types, char buffer[],
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
-		pad = '0';
+	{
+		padd = '0';
+	}
 	if (flags & F_PLUS)
+	{
 		extra_c = '+', length++;
+	}
 	else if (flags & F_SPACE)
+	{
 		extra_c = ' ', length++;
+	}
 
 	ind++;
-
 	return (write_pointer(buffer, ind, length,
-		width, flags, padd, extra_c, padd_start));
+				width, flags, padd, extra_c, padd_start));
 }
