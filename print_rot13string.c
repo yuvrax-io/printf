@@ -29,7 +29,9 @@ int print_rot13string(va_list types, char buffer[],
 	UNUSED(size);
 
 	if (str == NULL)
+	{
 		str = "(AHYY)";
+	}
 	for (i = 0; str[i]; i++)
 	{
 		for (j = 0; in[j]; j++)
