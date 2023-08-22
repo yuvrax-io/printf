@@ -12,6 +12,7 @@
  * @size: Size specifier
  * Return: 1 or 2;
  */
+
 int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 	int flags, int width, int precision, int size)
 {
@@ -24,7 +25,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 		{'r', print_reverse}, {'R', print_rot13string}, {'\0', NULL}
 	};
 	for (i = 0; fmt_types[i].fmt != '\0'; i++)
-		if (fmt[*id] == fmt_types[i].fmt)
+		if (fmt[*ind] == fmt_types[i].fmt)
 			return (fmt_types[i].fn(list, buffer, flags, width, precision, size));
 
 	if (fmt_types[i].fmt == '\0')
@@ -44,7 +45,7 @@ int handle_print(const char *fmt, int *ind, va_list list, char buffer[],
 			return (1);
 		}
 		unknow_len += write(1, &fmt[*ind], 1);
-		return (uknow_len);
+		return (unknow_len);
 	}
 	return (printed_chars);
 }
