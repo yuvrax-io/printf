@@ -23,7 +23,9 @@ int print_pointer(va_list types, char buffer[],
 	UNUSED(size);
 
 	if (addrs == NULL)
+	{
 		return (write(1, "(nil)", 5));
+	}
 
 	buffer[BUFF_SIZE - 1] = '\0';
 	UNUSED(precision);
@@ -37,11 +39,11 @@ int print_pointer(va_list types, char buffer[],
 		lengh++;
 	}
 
-	if ((flag & F_ZERO) && !(flags & F_MINUS))
+	if ((flags & F_ZERO) && !(flags & F_MINUS))
 		pad = '0';
 	if (flags & F_PLUS)
 		extra_c = '+', length++;
-	else if (flas & F_SPACE)
+	else if (flags & F_SPACE)
 		extra_c = ' ', length++;
 
 	ind++;
