@@ -10,12 +10,12 @@
  * @size: Size specifier
  * Return: Number of chars printed.
  */
+
 int print_pointer(va_list types, char buffer[],
 	int flags, int width, int precision, int size)
 {
 	char extra_c = 0, padd = ' ';
 	int ind = BUFF_SIZE - 1, length = 2, padd_start = 1; /* length=2, for '0x' */
-	unsigned long num_adrs;
 	char map_to[] = "0123456789abcdf";
 	void *addrs = va_arg(types, void *);
 
@@ -36,7 +36,7 @@ int print_pointer(va_list types, char buffer[],
 	{
 		buffer[ind--] = map_to[num_addrs % 16];
 		num_addrs /= 16;
-		lengh++;
+		length++;
 	}
 
 	if ((flags & F_ZERO) && !(flags & F_MINUS))
