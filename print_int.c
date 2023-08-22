@@ -31,7 +31,7 @@ int print_int(va_list types, char buffer[],
 		is_negative = 1;
 	}
 
-	while(num > 0)
+	while (num > 0)
 	{
 		buffer[i--] = (num % 10) + '0';
 		num /= 10;
